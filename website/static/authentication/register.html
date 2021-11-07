@@ -1,0 +1,58 @@
+{% extends "main_page/base_register.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                
+                
+                    
+                    <div class="register-main">
+                        <h2 class = 'title-signup'>Register</h2>
+                        <div class="agileits-top">
+                            <form action="/register" method="POST">
+                                {% csrf_token %}
+                                <input class="text-input-register" type="text" name="username" placeholder="Username" required="">
+                                <br>
+                                <input class="text-input-register" type="text" name="first_name" placeholder="First name" required="">
+                                <br>
+                                <input class="text-input-register" type="text" name="last_name" placeholder="Last name" required="">
+                                <br>
+                                <input class="text-input-register" type="email" name="email" placeholder="Email" required="">
+                                <br>
+                                <input class="text-input-register" type="password" name="password" placeholder="Password" required="">
+                                <br>
+                                <input class="text-input-register" type="password" name="password1" placeholder="Confirm Password" required="">
+                                <br>
+                                {% if user_valid %}
+                                    <p class ='err'>{{user_valid}}</p>
+                                {% endif %}
+                                {% if pass_valid %}
+                                    <p class ='err'>{{pass_valid}}</p>
+                                {% endif %}
+                                {% if email_valid %}
+                                    <p class ='err'>{{email_valid}}</p>
+                                {% endif %}
+                                <div class="wthree-text">
+                                    
+                                    <div class="clear"> </div>
+                                </div>
+                                <input class="btn btn-primary" id='signup-btn' type="submit" value="SIGNUP">
+                            </form>
+                            <!-- {{ user_valid }} -->
+                            
+                            <p>Do you have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+{% endblock %}

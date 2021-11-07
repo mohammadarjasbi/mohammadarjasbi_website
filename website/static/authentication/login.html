@@ -1,0 +1,41 @@
+{% extends "main_page/base_login.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                
+                
+                    
+                    <div class="register-main">
+                        <h2 class = 'title-signup'>Login</h2>
+                        <div class="agileits-top">
+                            <form action="/login" method="POST">
+                                {% csrf_token %}
+                                <input class="text-input-register" type="text" name="username" placeholder="username" required="">
+                                <br>
+                                <input class="text-input-register" type="password" name="password" placeholder="password" required="">
+                                <br>
+                                {% if valid %}
+                                    <p class ='err'>{{valid}}</p>
+                                {% endif %}
+                                <div class="wthree-text">
+                                    
+                                    <div class="clear"> </div>
+                                </div>
+                                <input class="btn btn-primary" id='signup-btn' type="submit" value="Login">
+                            </form>
+                        
+                            
+                            <p>Don't have an Account? <a href="{% url 'register' %}"> Register Now!</a></p>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

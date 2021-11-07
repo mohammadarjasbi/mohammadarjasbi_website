@@ -1,0 +1,42 @@
+{% extends "main_page/base_register.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                
+                
+                    
+                    <div class="register-main">
+                        <h2 class = 'title-signup'>Creative SignUp Form</h2>
+                        <div class="agileits-top">
+                            <form action="#" method="post">
+                                <input class="text-input-register" type="text" name="Username" placeholder="Username" required="">
+                                <br>
+                                <input class="text-input-register" type="email" name="email" placeholder="Email" required="">
+                                <br>
+                                <input class="text-input-register" type="password" name="password" placeholder="Password" required="">
+                                <br>
+                                <input class="text-input-register" type="password" name="password" placeholder="Confirm Password" required="">
+                                <br>
+                                <div class="wthree-text">
+                                    
+                                    <div class="clear"> </div>
+                                </div>
+                                <input class="btn btn-primary" id='signup-btn' type="submit" value="SIGNUP">
+                            </form>
+                            <p>Don't have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+{% endblock %}

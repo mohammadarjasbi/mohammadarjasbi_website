@@ -1,0 +1,50 @@
+{% extends "profile/base_profile.html" %}
+{% block title %}{{user.username}}{% endblock %}
+{% block content %}
+
+
+     <!-- <header class="masthead">
+      <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="profile-main">
+          <div class="image_prof" >
+            
+            </div>
+            <h6 class='input-titles'>Username: </h6>
+            <input class="form-control-prof" id="username_inputs" type="text" placeholder="  {{user.username}}" />
+            <h6 class='input-titles' id='first_name'>first name: </h6>
+            <input class="form-control-prof" id="firstname_inputs" type="text" placeholder="  {{user.first_name}}" />
+            <h6 class='input-titles'>last name: </h6>
+            <input class="form-control-prof" id="lastname_inputs" type="text" placeholder="  {{user.last_name}}" />
+            <h6 class='input-titles' id='emails'>emails: </h6>
+            <input class="form-control-prof" id="email_inputs" type="text" placeholder="  {{user.email}}" />
+            <br />
+            <a href="{% url 'change_password' %}">change password</a>
+        </div>
+      </div>
+  </header> -->
+
+
+  <header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+      
+        <div class="register-main-2">
+               
+              <img src="{{ user.profile.profile_pic.url }}" class="image_prof">
+              
+              <br/><br/>
+
+            
+            <form method="POST" enctype="multipart/form-data">
+                
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-primary">change</button>
+            </form>
+        </div>    
+    </div >
+</header>
+
+
+
+{% endblock %}
