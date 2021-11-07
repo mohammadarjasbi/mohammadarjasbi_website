@@ -12,11 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
+import django_herokupip
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-django_heroku.settings(locals())
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+django_heroku.settings(locals())
 
 
 # Quick-start development settings - unsuitable for production
